@@ -6,11 +6,12 @@
     <title>كلية الهندسة جامعة القاهرة</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Tajawal', Arial, sans-serif;
             margin: 0;
             padding: 0;
             direction: rtl;
             text-align: center;
+            background-color: #f4f4f4;
         }
 
         /* Navbar styling */
@@ -20,7 +21,8 @@
             align-items: center;
             background-color: #003366;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
+            font-weight: bold;
         }
 
         .navbar img {
@@ -32,7 +34,6 @@
             display: flex;
             align-items: center;
             font-size: 20px;
-            font-weight: bold;
         }
 
         .navbar .right {
@@ -41,36 +42,61 @@
 
         /* Main content */
         .container {
-            margin-top: 50px;
+            margin-top: 60px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: #003366;
+            margin-bottom: 20px;
         }
 
         input {
             padding: 10px;
             font-size: 16px;
             width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
-            margin-top: 10px;
+            margin-top: 15px;
             cursor: pointer;
             background-color: #003366;
             color: white;
             border: none;
             border-radius: 5px;
+            transition: 0.3s ease-in-out;
         }
 
         button:hover {
             background-color: #002244;
+            transform: scale(1.05);
         }
 
+        /* Error message styling */
         #error-message {
             color: red;
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 20px;
             display: none;
+            font-weight: bold;
+            animation: fadeIn 0.8s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
     </style>
 </head>
 <body>
@@ -86,16 +112,17 @@
 
     <!-- Main Content -->
     <div class="container">
-        <h2>أدخل الكود الخاص بك</h2>
+        <!-- <h2>كلية الهندسة جامعة القاهرة</h2> -->
         <input type="text" id="codeInput" placeholder="أدخل الكود هنا">
         <br>
         <button onclick="showError()">تحقق</button>
-        <p id="error-message">لقد حدث خطأ</p>
+        <p id="error-message">تم قفل الموقع</p>
     </div>
 
     <script>
         function showError() {
-            document.getElementById("error-message").style.display = "block";
+            let errorMessage = document.getElementById("error-message");
+            errorMessage.style.display = "block";
         }
     </script>
 
